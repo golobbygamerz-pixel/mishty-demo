@@ -4,38 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Makeover by Mishty | Luxury Bridal & Makeup Artist</title>
-  <meta name="description" content="Makeover by Mishty — luxury bridal, HD and occasion makeup crafted to create your signature look.">
-  <meta name="theme-color" content="#f7f1eb">
+  <title>Makeover by Mishty | Luxury Makeup Artist</title>
 
-  <meta property="og:title" content="Makeover by Mishty | Luxury Makeup Artist">
-  <meta property="og:description" content="Where beauty meets your signature style.">
-  <meta property="og:type" content="website">
+  <meta name="description"
+        content="Makeover by Mishty — luxury bridal, HD and occasion makeup designed around your signature style.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
+  <!-- IMPORTANT: CSS FILE -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- LOADER -->
-  <div class="loader">
+  <!-- LOADING SCREEN -->
+  <div id="loader">
     <div class="loader-logo">MBM</div>
-    <span>Makeover by Mishty</span>
+    <p>MAKEOVER BY MISHTY</p>
   </div>
 
+
   <!-- NAVIGATION -->
-  <header class="navbar">
-    <a href="#home" class="logo">
-      <span>MBM</span>
-      <small>MAKEOVER BY MISHTY</small>
+  <header id="navbar">
+
+    <a href="#home" class="brand">
+      <span class="brand-main">MBM</span>
+      <span class="brand-name">MAKEOVER BY MISHTY</span>
     </a>
 
-    <nav class="nav-links">
+    <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -44,540 +45,720 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <a href="#contact" class="nav-book">Book Now</a>
+    <a href="#contact" class="nav-button">Book Now</a>
 
-    <button class="menu-btn" aria-label="Open menu">
+    <button id="menuButton" aria-label="Open menu">
       <span></span>
       <span></span>
     </button>
+
   </header>
 
+
   <!-- MOBILE MENU -->
-  <div class="mobile-menu">
+  <div id="mobileMenu">
+
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
+
   </div>
 
+
   <!-- HERO -->
-  <main>
+  <section id="home" class="hero">
 
-    <section class="hero" id="home">
+    <div class="hero-background"></div>
 
-      <div class="hero-image"></div>
+    <div class="hero-overlay"></div>
 
-      <div class="hero-overlay"></div>
+    <div class="hero-content reveal">
 
-      <div class="hero-content reveal">
-        <p class="eyebrow">LUXURY MAKEUP ARTIST</p>
+      <p class="eyebrow">LUXURY MAKEUP ARTIST</p>
 
-        <h1>
-          Where Beauty Meets
-          <em>Your Signature Style</em>
-        </h1>
+      <h1>
+        Where Beauty Meets
+        <em>Your Signature Style</em>
+      </h1>
 
-        <p class="hero-description">
-          Creating timeless bridal and occasion makeup looks designed
-          to make you feel confident, radiant and unforgettable.
-        </p>
+      <p class="hero-text">
+        Creating timeless bridal and occasion makeup looks
+        designed to make you feel confident, radiant and unforgettable.
+      </p>
 
-        <div class="hero-buttons">
-          <a href="#contact" class="btn btn-primary">
-            Book Your Appointment
-            <span>↗</span>
-          </a>
+      <div class="hero-buttons">
 
-          <a href="#portfolio" class="btn btn-outline">
-            View My Work
-          </a>
-        </div>
-      </div>
+        <a href="#contact" class="button button-light">
+          Book Your Appointment
+          <span>↗</span>
+        </a>
 
-      <div class="hero-bottom">
-        <span>SCROLL TO DISCOVER</span>
-        <div class="scroll-line"></div>
-      </div>
-
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about section" id="about">
-
-      <div class="about-image reveal">
-        <img
-          src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1000&q=85"
-          alt="Makeup artist portrait"
-        >
-
-        <div class="floating-card">
-          <strong>Bridal</strong>
-          <span>•</span>
-          <strong>Party</strong>
-          <span>•</span>
-          <strong>HD Makeup</strong>
-          <span>•</span>
-          <strong>Glam</strong>
-        </div>
-      </div>
-
-      <div class="about-content reveal">
-
-        <p class="eyebrow">THE ARTIST BEHIND THE MAKEOVER</p>
-
-        <h2>
-          Beauty,
-          <em>Personalised.</em>
-        </h2>
-
-        <p class="large-text">
-          Makeup should never hide who you are.
-          It should reveal the most confident version of you.
-        </p>
-
-        <p>
-          Makeover by Mishty specialises in creating personalised
-          makeup looks that complement your features, personality,
-          outfit and occasion.
-        </p>
-
-        <p>
-          From timeless bridal elegance to modern glam,
-          every look is carefully designed with attention to
-          detail and a refined finish.
-        </p>
-
-        <a href="#services" class="text-link">
-          Explore the experience <span>→</span>
+        <a href="#portfolio" class="button button-outline">
+          View My Work
         </a>
 
       </div>
 
-    </section>
+    </div>
 
-    <!-- MARQUEE -->
-    <section class="marquee">
-      <div class="marquee-track">
-        <span>BRIDAL BEAUTY</span>
-        <i>✦</i>
-        <span>TIMELESS GLAM</span>
-        <i>✦</i>
-        <span>SIGNATURE LOOKS</span>
-        <i>✦</i>
-        <span>BRIDAL BEAUTY</span>
-        <i>✦</i>
-        <span>TIMELESS GLAM</span>
-        <i>✦</i>
-      </div>
-    </section>
+    <div class="scroll-indicator">
+      <span>SCROLL TO DISCOVER</span>
+      <div></div>
+    </div>
 
-    <!-- SERVICES -->
-    <section class="services section" id="services">
+  </section>
 
-      <div class="section-heading reveal">
-        <div>
-          <p class="eyebrow">SERVICES</p>
-          <h2>Made for your <em>moment.</em></h2>
-        </div>
 
-        <p>
-          Bespoke makeup experiences created around
-          your features, style and celebration.
-        </p>
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+
+    <div class="about-image reveal">
+
+      <img
+        src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1000&q=85"
+        alt="Makeup artist">
+
+      <div class="floating-card">
+        Bridal · HD · Party · Glam
       </div>
 
-      <div class="services-grid">
+    </div>
 
-        <article class="service-card reveal">
-          <span class="service-number">01</span>
-          <div class="service-icon">✦</div>
-          <h3>Bridal Makeup</h3>
-          <p>
-            A personalised bridal look created to feel timeless,
-            elegant and completely you.
-          </p>
-          <a href="#contact">Enquire Now →</a>
-        </article>
 
-        <article class="service-card reveal">
-          <span class="service-number">02</span>
-          <div class="service-icon">✧</div>
-          <h3>HD Makeup</h3>
-          <p>
-            A refined, camera-ready finish designed beautifully
-            for photography and celebrations.
-          </p>
-          <a href="#contact">Enquire Now →</a>
-        </article>
+    <div class="about-content reveal">
 
-        <article class="service-card reveal">
-          <span class="service-number">03</span>
-          <div class="service-icon">♡</div>
-          <h3>Engagement Makeup</h3>
-          <p>
-            Soft, polished glamour for one of the most
-            memorable days of your journey.
-          </p>
-          <a href="#contact">Enquire Now →</a>
-        </article>
+      <p class="eyebrow">THE ARTIST BEHIND THE MAKEOVER</p>
 
-        <article class="service-card reveal">
-          <span class="service-number">04</span>
-          <div class="service-icon">✦</div>
-          <h3>Party Makeup</h3>
-          <p>
-            Modern glam looks tailored to your outfit,
-            personality and occasion.
-          </p>
-          <a href="#contact">Enquire Now →</a>
-        </article>
+      <h2>
+        Beauty,
+        <em>Personalised.</em>
+      </h2>
 
-        <article class="service-card reveal">
-          <span class="service-number">05</span>
-          <div class="service-icon">✧</div>
-          <h3>Reception Makeup</h3>
-          <p>
-            Sophisticated evening glamour designed to
-            complement your reception look.
-          </p>
-          <a href="#contact">Enquire Now →</a>
-        </article>
+      <p class="big-text">
+        Makeup should never hide who you are.
+        It should reveal the most confident version of you.
+      </p>
 
-        <article class="service-card reveal">
-          <span class="service-number">06</span>
-          <div class="service-icon">♡</div>
-          <h3>Haldi & Mehendi</h3>
-          <p>
-            Fresh and radiant looks created for your
-            colourful pre-wedding celebrations.
-          </p>
-          <a href="#contact">Enquire Now →</a>
-        </article>
+      <p>
+        Makeover by Mishty creates personalised makeup looks
+        designed around your features, personality, outfit and occasion.
+      </p>
 
-        <article class="service-card reveal">
-          <span class="service-number">07</span>
-          <div class="service-icon">✦</div>
-          <h3>Guest Makeup</h3>
-          <p>
-            Elegant occasion makeup for bridesmaids,
-            family and wedding guests.
-          </p>
-          <a href="#contact">Enquire Now →</a>
-        </article>
+      <p>
+        From timeless bridal elegance to modern glam,
+        every look is created with precision, creativity and attention to detail.
+      </p>
 
-        <article class="service-card reveal">
-          <span class="service-number">08</span>
-          <div class="service-icon">✧</div>
-          <h3>Custom Glam</h3>
-          <p>
-            Your vision, interpreted into a completely
-            personalised makeup experience.
-          </p>
-          <a href="#contact">Enquire Now →</a>
-        </article>
+      <a href="#services" class="text-link">
+        Explore the services →
+      </a>
 
-      </div>
+    </div>
 
-    </section>
+  </section>
 
-    <!-- EXPERIENCE -->
-    <section class="experience section">
 
-      <div class="experience-image reveal">
-        <img
-          src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85"
-          alt="Luxury makeup experience"
-        >
-      </div>
+  <!-- MARQUEE -->
+  <div class="marquee">
 
-      <div class="experience-content reveal">
+    <div class="marquee-track">
 
-        <p class="eyebrow">THE BRIDAL EXPERIENCE</p>
+      <span>BRIDAL BEAUTY</span>
+      <b>✦</b>
+
+      <span>TIMELESS GLAM</span>
+      <b>✦</b>
+
+      <span>SIGNATURE LOOKS</span>
+      <b>✦</b>
+
+      <span>BRIDAL BEAUTY</span>
+      <b>✦</b>
+
+      <span>TIMELESS GLAM</span>
+      <b>✦</b>
+
+      <span>SIGNATURE LOOKS</span>
+      <b>✦</b>
+
+    </div>
+
+  </div>
+
+
+  <!-- SERVICES -->
+  <section id="services" class="section services">
+
+    <div class="section-title reveal">
+
+      <div>
+        <p class="eyebrow">SERVICES</p>
 
         <h2>
-          Your Big Day.
-          <em>Your Signature Look.</em>
+          Made for your
+          <em>moment.</em>
         </h2>
+      </div>
 
-        <div class="step">
-          <span>01</span>
-          <div>
-            <h3>Consultation</h3>
-            <p>
-              Understanding your preferences, outfit,
-              jewellery and the look you envision.
-            </p>
-          </div>
-        </div>
+      <p>
+        Bespoke makeup experiences created around
+        your features, style and celebration.
+      </p>
 
-        <div class="step">
-          <span>02</span>
-          <div>
-            <h3>Personalised Look</h3>
-            <p>
-              Creating a makeup style tailored specifically
-              to your features and personality.
-            </p>
-          </div>
-        </div>
+    </div>
 
-        <div class="step">
-          <span>03</span>
-          <div>
-            <h3>Final Glam</h3>
-            <p>
-              A polished, camera-ready finish created
-              for your unforgettable celebration.
-            </p>
-          </div>
+
+    <div class="services-grid">
+
+      <article class="service reveal">
+        <span class="service-number">01</span>
+        <div class="service-symbol">✦</div>
+
+        <h3>Bridal Makeup</h3>
+
+        <p>
+          A personalised bridal look created to feel
+          timeless, elegant and completely you.
+        </p>
+
+        <a href="#contact">Enquire Now →</a>
+      </article>
+
+
+      <article class="service reveal">
+        <span class="service-number">02</span>
+        <div class="service-symbol">✧</div>
+
+        <h3>HD Makeup</h3>
+
+        <p>
+          A refined, camera-ready finish designed
+          beautifully for photography.
+        </p>
+
+        <a href="#contact">Enquire Now →</a>
+      </article>
+
+
+      <article class="service reveal">
+        <span class="service-number">03</span>
+        <div class="service-symbol">♡</div>
+
+        <h3>Engagement</h3>
+
+        <p>
+          Soft, polished glamour for one of the
+          most memorable days of your journey.
+        </p>
+
+        <a href="#contact">Enquire Now →</a>
+      </article>
+
+
+      <article class="service reveal">
+        <span class="service-number">04</span>
+        <div class="service-symbol">✦</div>
+
+        <h3>Party Makeup</h3>
+
+        <p>
+          Modern glam looks tailored to your
+          outfit, personality and occasion.
+        </p>
+
+        <a href="#contact">Enquire Now →</a>
+      </article>
+
+
+      <article class="service reveal">
+        <span class="service-number">05</span>
+        <div class="service-symbol">✧</div>
+
+        <h3>Reception</h3>
+
+        <p>
+          Sophisticated evening glamour designed
+          to complement your reception look.
+        </p>
+
+        <a href="#contact">Enquire Now →</a>
+      </article>
+
+
+      <article class="service reveal">
+        <span class="service-number">06</span>
+        <div class="service-symbol">♡</div>
+
+        <h3>Haldi & Mehendi</h3>
+
+        <p>
+          Fresh and radiant looks created for
+          colourful pre-wedding celebrations.
+        </p>
+
+        <a href="#contact">Enquire Now →</a>
+      </article>
+
+
+      <article class="service reveal">
+        <span class="service-number">07</span>
+        <div class="service-symbol">✦</div>
+
+        <h3>Guest Makeup</h3>
+
+        <p>
+          Elegant occasion makeup for bridesmaids,
+          family and wedding guests.
+        </p>
+
+        <a href="#contact">Enquire Now →</a>
+      </article>
+
+
+      <article class="service reveal">
+        <span class="service-number">08</span>
+        <div class="service-symbol">✧</div>
+
+        <h3>Custom Glam</h3>
+
+        <p>
+          Your vision transformed into a
+          completely personalised makeup look.
+        </p>
+
+        <a href="#contact">Enquire Now →</a>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXPERIENCE -->
+  <section class="section experience">
+
+    <div class="experience-image reveal">
+
+      <img
+        src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85"
+        alt="Makeup experience">
+
+    </div>
+
+
+    <div class="experience-content reveal">
+
+      <p class="eyebrow">THE BRIDAL EXPERIENCE</p>
+
+      <h2>
+        Your Big Day.
+        <em>Your Signature Look.</em>
+      </h2>
+
+
+      <div class="step">
+
+        <span>01</span>
+
+        <div>
+          <h3>Consultation</h3>
+
+          <p>
+            Understanding your preferences, outfit,
+            jewellery and the look you envision.
+          </p>
         </div>
 
       </div>
 
-    </section>
 
-    <!-- PORTFOLIO -->
-    <section class="portfolio section" id="portfolio">
+      <div class="step">
 
-      <div class="section-heading reveal">
+        <span>02</span>
+
         <div>
-          <p class="eyebrow">PORTFOLIO</p>
-          <h2>A glimpse of <em>the glam.</em></h2>
+          <h3>Personalised Look</h3>
+
+          <p>
+            Creating a makeup style tailored specifically
+            to your features and personality.
+          </p>
         </div>
 
+      </div>
+
+
+      <div class="step">
+
+        <span>03</span>
+
+        <div>
+          <h3>Final Glam</h3>
+
+          <p>
+            A polished, camera-ready finish created
+            for your unforgettable celebration.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section portfolio">
+
+    <div class="section-title reveal">
+
+      <div>
+
+        <p class="eyebrow">PORTFOLIO</p>
+
+        <h2>
+          A glimpse of
+          <em>the glam.</em>
+        </h2>
+
+      </div>
+
+
+      <!-- CHANGE THIS LINK TO HER REAL INSTAGRAM -->
+      <a
+        class="instagram-button"
+        href="https://www.instagram.com/"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        Follow on Instagram ↗
+
+      </a>
+
+    </div>
+
+
+    <div class="gallery">
+
+      <div class="gallery-item large reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1000&q=85"
+          alt="Bridal makeup">
+
+        <div class="gallery-overlay">
+          <small>BRIDAL</small>
+          <strong>View Look ↗</strong>
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=85"
+          alt="Makeup look">
+
+        <div class="gallery-overlay">
+          <small>GLAM</small>
+          <strong>View Look ↗</strong>
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=85"
+          alt="Beauty">
+
+        <div class="gallery-overlay">
+          <small>BEAUTY</small>
+          <strong>View Look ↗</strong>
+        </div>
+
+      </div>
+
+
+      <div class="gallery-item wide reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1200&q=85"
+          alt="Luxury makeup">
+
+        <div class="gallery-overlay">
+          <small>EDITORIAL</small>
+          <strong>View Look ↗</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY CHOOSE -->
+  <section class="section why">
+
+    <div class="section-title centered reveal">
+
+      <p class="eyebrow">THE MISHTY SIGNATURE</p>
+
+      <h2>
+        Details make the
+        <em>difference.</em>
+      </h2>
+
+    </div>
+
+
+    <div class="features">
+
+      <div class="feature reveal">
+
+        <span>01</span>
+
+        <h3>Personalised Beauty</h3>
+
+        <p>
+          Every look is designed around the individual,
+          never copied from a template.
+        </p>
+
+      </div>
+
+
+      <div class="feature reveal">
+
+        <span>02</span>
+
+        <h3>Premium Products</h3>
+
+        <p>
+          Professional-quality products and refined
+          techniques for a polished result.
+        </p>
+
+      </div>
+
+
+      <div class="feature reveal">
+
+        <span>03</span>
+
+        <h3>Camera-Ready Finish</h3>
+
+        <p>
+          Beautifully balanced makeup created
+          to photograph beautifully.
+        </p>
+
+      </div>
+
+
+      <div class="feature reveal">
+
+        <span>04</span>
+
+        <h3>Attention to Detail</h3>
+
+        <p>
+          Every element of your final look receives
+          thoughtful attention.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="section reviews">
+
+    <div class="section-title centered reveal">
+
+      <p class="eyebrow">KIND WORDS</p>
+
+      <h2>
+        Loved by
+        <em>our brides.</em>
+      </h2>
+
+    </div>
+
+
+    <div class="review-box reveal">
+
+      <button id="previousReview">←</button>
+
+      <div class="review-content">
+
+        <div class="stars">★★★★★</div>
+
+        <p id="reviewText">
+          “Your genuine client testimonial can be added here.”
+        </p>
+
+        <span id="reviewName">
+          CLIENT NAME
+        </span>
+
+      </div>
+
+      <button id="nextReview">→</button>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT / CTA -->
+  <section id="contact" class="contact">
+
+    <div class="contact-background"></div>
+
+    <div class="contact-overlay"></div>
+
+    <div class="contact-content reveal">
+
+      <p class="eyebrow">
+        LET'S CREATE SOMETHING BEAUTIFUL
+      </p>
+
+      <h2>
+        Ready for your
+        <em>signature look?</em>
+      </h2>
+
+      <p>
+        Let's create a look that feels completely you.
+      </p>
+
+
+      <div class="contact-buttons">
+
+        <a href="#contact" class="button button-light">
+          Book Your Appointment ↗
+        </a>
+
+
+        <!-- REPLACE # WITH ACTUAL WHATSAPP LINK -->
+        <a href="#" class="button button-glass">
+          Chat on WhatsApp
+        </a>
+
+
+        <!-- REPLACE WITH ACTUAL INSTAGRAM -->
         <a
-          href="https://instagram.com/"
+          href="https://www.instagram.com/"
           target="_blank"
           rel="noopener noreferrer"
-          class="instagram-link"
-        >
-          Follow on Instagram ↗
+          class="button button-glass">
+
+          Instagram ↗
+
         </a>
-      </div>
-
-      <div class="gallery">
-
-        <div class="gallery-item tall reveal">
-          <img
-            src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=85"
-            alt="Bridal makeup"
-          >
-          <div class="gallery-overlay">
-            <span>BRIDAL</span>
-            <strong>View Look ↗</strong>
-          </div>
-        </div>
-
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=85"
-            alt="Makeup look"
-          >
-          <div class="gallery-overlay">
-            <span>GLAM</span>
-            <strong>View Look ↗</strong>
-          </div>
-        </div>
-
-        <div class="gallery-item reveal">
-          <img
-            src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=85"
-            alt="Beauty look"
-          >
-          <div class="gallery-overlay">
-            <span>BEAUTY</span>
-            <strong>View Look ↗</strong>
-          </div>
-        </div>
-
-        <div class="gallery-item wide reveal">
-          <img
-            src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1200&q=85"
-            alt="Luxury makeup"
-          >
-          <div class="gallery-overlay">
-            <span>EDITORIAL</span>
-            <strong>View Look ↗</strong>
-          </div>
-        </div>
 
       </div>
 
-    </section>
+    </div>
 
-    <!-- WHY MISHTY -->
-    <section class="why section">
+  </section>
 
-      <div class="section-heading centered reveal">
-        <p class="eyebrow">THE MISHTY SIGNATURE</p>
-        <h2>Details make the <em>difference.</em></h2>
-      </div>
-
-      <div class="features">
-
-        <div class="feature reveal">
-          <span>01</span>
-          <h3>Personalised Beauty</h3>
-          <p>
-            Every look is designed around the individual,
-            never copied from a template.
-          </p>
-        </div>
-
-        <div class="feature reveal">
-          <span>02</span>
-          <h3>Premium Products</h3>
-          <p>
-            Professional-quality products and refined
-            techniques for a polished result.
-          </p>
-        </div>
-
-        <div class="feature reveal">
-          <span>03</span>
-          <h3>Camera-Ready Finish</h3>
-          <p>
-            Beautifully balanced makeup created to
-            photograph beautifully.
-          </p>
-        </div>
-
-        <div class="feature reveal">
-          <span>04</span>
-          <h3>Attention to Detail</h3>
-          <p>
-            Every element of your final look receives
-            thoughtful attention.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- REVIEWS -->
-    <section class="reviews section" id="reviews">
-
-      <div class="section-heading centered reveal">
-        <p class="eyebrow">KIND WORDS</p>
-        <h2>Loved by <em>our brides.</em></h2>
-      </div>
-
-      <div class="testimonial-container reveal">
-
-        <button class="testimonial-btn prev">←</button>
-
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-
-          <p id="testimonial-text">
-            “Add a genuine client testimonial here.
-            Replace this text with an actual review from a bride.”
-          </p>
-
-          <span id="testimonial-name">CLIENT NAME</span>
-        </div>
-
-        <button class="testimonial-btn next">→</button>
-
-      </div>
-
-      <div class="testimonial-dots"></div>
-
-    </section>
-
-    <!-- CTA -->
-    <section class="cta" id="contact">
-
-      <div class="cta-overlay"></div>
-
-      <div class="cta-content reveal">
-
-        <p class="eyebrow">LET'S CREATE SOMETHING BEAUTIFUL</p>
-
-        <h2>
-          Ready for your
-          <em>signature look?</em>
-        </h2>
-
-        <p>
-          Let’s create a look that feels completely you.
-        </p>
-
-        <div class="cta-buttons">
-
-          <a href="#" class="btn btn-light">
-            Book Your Appointment ↗
-          </a>
-
-          <!-- Replace # with actual WhatsApp link -->
-          <a href="#" class="btn btn-glass">
-            Chat on WhatsApp
-          </a>
-
-          <!-- Replace # with actual Instagram link -->
-          <a href="https://instagram.com/"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="btn btn-glass">
-            Instagram ↗
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
 
   <!-- FOOTER -->
   <footer>
 
-    <div class="footer-top">
+    <div class="footer-grid">
 
       <div class="footer-brand">
+
         <div class="footer-logo">MBM</div>
+
         <h3>Makeover by Mishty</h3>
+
         <p>
-          Luxury makeup crafted around your
-          individual beauty.
+          Luxury makeup crafted around
+          your individual beauty.
         </p>
+
       </div>
 
-      <div class="footer-column">
-        <h4>Explore</h4>
+
+      <div>
+
+        <h4>EXPLORE</h4>
+
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#reviews">Reviews</a>
+
       </div>
 
-      <div class="footer-column">
-        <h4>Connect</h4>
-        <a href="#">Instagram</a>
+
+      <div>
+
+        <h4>CONNECT</h4>
+
+        <!-- REPLACE WITH REAL LINKS -->
+
+        <a href="https://www.instagram.com/"
+           target="_blank">
+          Instagram
+        </a>
+
         <a href="#">WhatsApp</a>
-        <a href="#">Booking</a>
+
+        <a href="#contact">
+          Booking
+        </a>
+
       </div>
 
-      <div class="footer-column">
-        <h4>Enquiries</h4>
-        <a href="#contact">Book an Appointment</a>
+
+      <div>
+
+        <h4>ENQUIRIES</h4>
+
+        <a href="#contact">
+          Book an Appointment
+        </a>
+
         <span>Location — Add Location</span>
+
         <span>Email — Add Email</span>
+
       </div>
 
     </div>
 
+
     <div class="footer-bottom">
-      <span>© 2026 Makeover by Mishty</span>
-      <span>Designed with intention.</span>
+
+      <span>
+        © 2026 Makeover by Mishty
+      </span>
+
+      <span>
+        Luxury Beauty Experience
+      </span>
+
     </div>
 
   </footer>
 
+
+  <!-- IMPORTANT: JAVASCRIPT FILE -->
   <script src="script.js"></script>
 
 </body>
