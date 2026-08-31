@@ -1,122 +1,378 @@
-(function() {
-    'use strict';
+/* =========================================
+   MAKEOVER BY MISHTY
+   INTERACTIONS & ANIMATIONS
+========================================= */
 
-    // ===== PORTFOLIO DATA =====
-    const portfolioItems = [
-        { id: 1, category: 'bride', label: 'Bride', emoji: '👰' },
-        { id: 2, category: 'party', label: 'Party', emoji: '🎉' },
-        { id: 3, category: 'engagement', label: 'Engagement', emoji: '💍' },
-        { id: 4, category: 'editorial', label: 'Editorial', emoji: '📸' },
-        { id: 5, category: 'bride', label: 'Bride', emoji: '👰' },
-        { id: 6, category: 'party', label: 'Party', emoji: '✨' },
-        { id: 7, category: 'engagement', label: 'Engagement', emoji: '💖' },
-        { id: 8, category: 'editorial', label: 'Editorial', emoji: '🌟' },
-        { id: 9, category: 'bride', label: 'Bride', emoji: '🌹' },
-        { id: 10, category: 'party', label: 'Party', emoji: '🥂' },
-        { id: 11, category: 'engagement', label: 'Engagement', emoji: '💎' },
-        { id: 12, category: 'editorial', label: 'Editorial', emoji: '🎭' },
-    ];
 
-    const portfolioGrid = document.getElementById('portfolioGrid');
+/* -----------------------------------------
+   LOADER
+----------------------------------------- */
 
-    function renderPortfolio(filter = 'all') {
-        const filtered = filter === 'all' ? portfolioItems : portfolioItems.filter(item => item.category === filter);
-        portfolioGrid.innerHTML = filtered.map(item => `
-            <div class="portfolio-item" data-category="${item.category}">
-                <div style="background: linear-gradient(135deg, #2a221e, #1a1412); width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:3.5rem; color:#d4af37; opacity:0.5;">${item.emoji}</div>
-                <div class="tag">${item.label}</div>
-                <div class="overlay"><span>View Look</span></div>
-            </div>
-        `).join('');
+window.addEventListener("load", () => {
+
+  const loader = document.querySelector(".loader");
+
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 900);
+
+});
+
+
+/* -----------------------------------------
+   NAVBAR SCROLL EFFECT
+----------------------------------------- */
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+
+  if (window.scrollY > 70) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+
+});
+
+
+/* -----------------------------------------
+   MOBILE MENU
+----------------------------------------- */
+
+const menuButton = document.querySelector(".menu-btn");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileLinks = document.querySelectorAll(".mobile-menu a");
+
+menuButton.addEventListener("click", () => {
+
+  mobileMenu.classList.toggle("active");
+
+  document.body.classList.toggle("no-scroll");
+
+});
+
+
+mobileLinks.forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    mobileMenu.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+
+  });
+
+});
+
+
+/* -----------------------------------------
+   SCROLL REVEAL
+----------------------------------------- */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+
+    entries.forEach((entry) => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("visible");
+
+        revealObserver.unobserve(entry.target);
+
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.12
+  }
+);
+
+
+revealElements.forEach((element) => {
+
+  revealObserver.observe(element);
+
+});
+
+
+/* -----------------------------------------
+   TESTIMONIAL SLIDER
+----------------------------------------- */
+
+const testimonials = [
+
+  {
+    text:
+      "“Add a genuine client testimonial here. Replace this with an actual review from a bride.”",
+    name:
+      "CLIENT NAME"
+  },
+
+  {
+    text:
+      "“Replace this section with another genuine review from a happy client.”",
+    name:
+      "CLIENT NAME"
+  },
+
+  {
+    text:
+      "“Use real feedback here to build trust and showcase the bridal experience.”",
+    name:
+      "CLIENT NAME"
+  }
+
+];
+
+
+let currentTestimonial = 0;
+
+const testimonialText =
+  document.getElementById("testimonial-text");
+
+const testimonialName =
+  document.getElementById("testimonial-name");
+
+const nextButton =
+  document.querySelector(".testimonial-btn.next");
+
+const prevButton =
+  document.querySelector(".testimonial-btn.prev");
+
+const dotsContainer =
+  document.querySelector(".testimonial-dots");
+
+
+/* CREATE DOTS */
+
+testimonials.forEach((_, index) => {
+
+  const dot = document.createElement("span");
+
+  dot.classList.add("dot");
+
+  dot.addEventListener("click", () => {
+
+    currentTestimonial = index;
+
+    updateTestimonial();
+
+  });
+
+  dotsContainer.appendChild(dot);
+
+});
+
+
+function updateDots() {
+
+  const dots =
+    document.querySelectorAll(".dot");
+
+  dots.forEach((dot, index) => {
+
+    dot.style.opacity =
+      index === currentTestimonial ? "1" : "0.3";
+
+  });
+
+}
+
+
+function updateTestimonial() {
+
+  testimonialText.style.opacity = "0";
+  testimonialName.style.opacity = "0";
+
+  setTimeout(() => {
+
+    testimonialText.textContent =
+      testimonials[currentTestimonial].text;
+
+    testimonialName.textContent =
+      testimonials[currentTestimonial].name;
+
+    testimonialText.style.opacity = "1";
+    testimonialName.style.opacity = "1";
+
+    updateDots();
+
+  }, 250);
+
+}
+
+
+nextButton.addEventListener("click", () => {
+
+  currentTestimonial++;
+
+  if (currentTestimonial >= testimonials.length) {
+    currentTestimonial = 0;
+  }
+
+  updateTestimonial();
+
+});
+
+
+prevButton.addEventListener("click", () => {
+
+  currentTestimonial--;
+
+  if (currentTestimonial < 0) {
+    currentTestimonial = testimonials.length - 1;
+  }
+
+  updateTestimonial();
+
+});
+
+
+updateTestimonial();
+
+
+/* -----------------------------------------
+   BUTTON MICRO INTERACTION
+----------------------------------------- */
+
+const buttons =
+  document.querySelectorAll(".btn, .nav-book");
+
+buttons.forEach(button => {
+
+  button.addEventListener("mouseenter", () => {
+
+    button.style.transform = "translateY(-3px)";
+
+  });
+
+  button.addEventListener("mouseleave", () => {
+
+    button.style.transform = "";
+
+  });
+
+});
+
+
+/* -----------------------------------------
+   IMAGE PARALLAX
+----------------------------------------- */
+
+const heroImage =
+  document.querySelector(".hero-image");
+
+window.addEventListener("scroll", () => {
+
+  if (!heroImage) return;
+
+  const scrollPosition =
+    window.scrollY;
+
+  if (scrollPosition < window.innerHeight) {
+
+    heroImage.style.transform =
+      `translateY(${scrollPosition * 0.12}px) scale(1.02)`;
+
+  }
+
+});
+
+
+/* -----------------------------------------
+   SMOOTH ANCHOR NAVIGATION
+----------------------------------------- */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+  anchor.addEventListener("click", function (event) {
+
+    const targetId =
+      this.getAttribute("href");
+
+    if (
+      !targetId ||
+      targetId === "#" ||
+      !document.querySelector(targetId)
+    ) {
+      return;
     }
-    renderPortfolio('all');
 
-    // ===== FILTER PILLS =====
-    document.querySelectorAll('.filter-pills .pill').forEach(pill => {
-        pill.addEventListener('click', function() {
-            document.querySelectorAll('.filter-pills .pill').forEach(p => p.classList.remove('active'));
-            this.classList.add('active');
-            const filter = this.dataset.filter;
-            renderPortfolio(filter);
-        });
+    event.preventDefault();
+
+    document.querySelector(targetId).scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
 
-    // ===== INSTAGRAM GRID (mock) =====
-    const igGrid = document.getElementById('instagramGrid');
-    const igPosts = ['🌸', '✨', '💄', '👑', '💋', '🌹'];
-    igGrid.innerHTML = igPosts.map(emoji => `
-        <div class="ig-item">
-            <div style="font-size:3.5rem; opacity:0.6;">${emoji}</div>
-            <div class="ig-icon"><i class="fab fa-instagram"></i></div>
-        </div>
-    `).join('');
+  });
 
-    // ===== COUNT-UP STATS =====
-    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
-    let counted = false;
+});
 
-    function animateCounts() {
-        if (counted) return;
-        const rect = statNumbers[0]?.closest('.stats-bar')?.getBoundingClientRect();
-        if (!rect) return;
-        if (rect.top < window.innerHeight - 60) {
-            counted = true;
-            statNumbers.forEach(el => {
-                const target = parseInt(el.dataset.count, 10);
-                let current = 0;
-                const step = Math.max(1, Math.floor(target / 50));
-                const interval = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(interval);
-                    }
-                    el.textContent = current + (target === 450 || target === 422 ? '+' : '');
-                }, 25);
-            });
-        }
-    }
 
-    // ===== BACK TO TOP =====
-    const backTop = document.getElementById('backTop');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 400) {
-            backTop.classList.add('visible');
-        } else {
-            backTop.classList.remove('visible');
-        }
-        animateCounts();
-    });
-    backTop.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+/* -----------------------------------------
+   PORTFOLIO IMAGE HOVER
+----------------------------------------- */
 
-    // ===== TESTIMONIAL AUTO-SCROLL =====
-    const carousel = document.getElementById('testimonialCarousel');
-    let scrollInterval;
+const galleryItems =
+  document.querySelectorAll(".gallery-item");
 
-    function startAutoScroll() {
-        scrollInterval = setInterval(() => {
-            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-                carousel.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                carousel.scrollBy({ left: 340, behavior: 'smooth' });
-            }
-        }, 4000);
-    }
+galleryItems.forEach(item => {
 
-    carousel.addEventListener('mouseenter', () => clearInterval(scrollInterval));
-    carousel.addEventListener('mouseleave', startAutoScroll);
-    startAutoScroll();
+  item.addEventListener("mousemove", (event) => {
 
-    // ===== FORM SUBMIT =====
-    document.getElementById('bookingForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('✨ Thank you, Mishty will reach out within 24 hours! ✨');
-        this.reset();
-    });
+    const rect =
+      item.getBoundingClientRect();
 
-    // ===== INITIAL COUNT CHECK =====
-    setTimeout(animateCounts, 400);
+    const x =
+      event.clientX - rect.left;
 
-})();
+    const y =
+      event.clientY - rect.top;
+
+    const rotateX =
+      ((y / rect.height) - 0.5) * -2;
+
+    const rotateY =
+      ((x / rect.width) - 0.5) * 2;
+
+    item.style.transform =
+      `perspective(800px)
+       rotateX(${rotateX}deg)
+       rotateY(${rotateY}deg)`;
+
+  });
+
+  item.addEventListener("mouseleave", () => {
+
+    item.style.transform = "";
+
+  });
+
+});
+
+
+/* -----------------------------------------
+   REDUCE MOTION FOR ACCESSIBILITY
+----------------------------------------- */
+
+const prefersReducedMotion =
+  window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (prefersReducedMotion.matches) {
+
+  document.documentElement.style.scrollBehavior =
+    "auto";
+
+  revealElements.forEach(element => {
+
+    element.classList.add("visible");
+
+  });
+
+}
