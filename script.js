@@ -1,128 +1,143 @@
 /* =========================================
    MAKEOVER BY MISHTY
-   INTERACTIONS & ANIMATIONS
+   MAIN JAVASCRIPT
 ========================================= */
 
 
-/* -----------------------------------------
+/* =========================================
    LOADER
------------------------------------------ */
+========================================= */
 
-window.addEventListener("load", () => {
+window.addEventListener("load", function () {
 
-  const loader = document.querySelector(".loader");
+  const loader = document.getElementById("loader");
 
-  setTimeout(() => {
+  setTimeout(function () {
+
     loader.classList.add("hide");
-  }, 900);
+
+  }, 800);
 
 });
 
 
-/* -----------------------------------------
-   NAVBAR SCROLL EFFECT
------------------------------------------ */
+/* =========================================
+   NAVBAR
+========================================= */
 
-const navbar = document.querySelector(".navbar");
+const navbar = document.getElementById("navbar");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll", function () {
 
-  if (window.scrollY > 70) {
+  if (window.scrollY > 60) {
+
     navbar.classList.add("scrolled");
+
   } else {
+
     navbar.classList.remove("scrolled");
+
   }
 
 });
 
 
-/* -----------------------------------------
+/* =========================================
    MOBILE MENU
------------------------------------------ */
+========================================= */
 
-const menuButton = document.querySelector(".menu-btn");
-const mobileMenu = document.querySelector(".mobile-menu");
-const mobileLinks = document.querySelectorAll(".mobile-menu a");
+const menuButton = document.getElementById("menuButton");
+const mobileMenu = document.getElementById("mobileMenu");
 
-menuButton.addEventListener("click", () => {
+menuButton.addEventListener("click", function () {
 
   mobileMenu.classList.toggle("active");
 
-  document.body.classList.toggle("no-scroll");
+  document.body.classList.toggle("menu-open");
 
 });
 
 
-mobileLinks.forEach(link => {
+const mobileLinks =
+  document.querySelectorAll("#mobileMenu a");
 
-  link.addEventListener("click", () => {
+mobileLinks.forEach(function (link) {
+
+  link.addEventListener("click", function () {
 
     mobileMenu.classList.remove("active");
-    document.body.classList.remove("no-scroll");
+
+    document.body.classList.remove("menu-open");
 
   });
 
 });
 
 
-/* -----------------------------------------
+/* =========================================
    SCROLL REVEAL
------------------------------------------ */
+========================================= */
 
-const revealElements = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-
-    entries.forEach((entry) => {
-
-      if (entry.isIntersecting) {
-
-        entry.target.classList.add("visible");
-
-        revealObserver.unobserve(entry.target);
-
-      }
-
-    });
-
-  },
-  {
-    threshold: 0.12
-  }
-);
+const revealElements =
+  document.querySelectorAll(".reveal");
 
 
-revealElements.forEach((element) => {
+const revealObserver =
+  new IntersectionObserver(
+    function (entries) {
+
+      entries.forEach(function (entry) {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("visible");
+
+          revealObserver.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.12
+    }
+  );
+
+
+revealElements.forEach(function (element) {
 
   revealObserver.observe(element);
 
 });
 
 
-/* -----------------------------------------
-   TESTIMONIAL SLIDER
------------------------------------------ */
+/* =========================================
+   TESTIMONIALS
+========================================= */
 
-const testimonials = [
+const reviews = [
 
   {
     text:
-      "“Add a genuine client testimonial here. Replace this with an actual review from a bride.”",
+      "“Your genuine bride testimonial can be placed here.”",
+
     name:
       "CLIENT NAME"
   },
 
   {
     text:
-      "“Replace this section with another genuine review from a happy client.”",
+      "“Replace this with a real review from a happy client.”",
+
     name:
       "CLIENT NAME"
   },
 
   {
     text:
-      "“Use real feedback here to build trust and showcase the bridal experience.”",
+      "“Add another genuine testimonial to showcase the experience.”",
+
     name:
       "CLIENT NAME"
   }
@@ -130,184 +145,146 @@ const testimonials = [
 ];
 
 
-let currentTestimonial = 0;
-
-const testimonialText =
-  document.getElementById("testimonial-text");
-
-const testimonialName =
-  document.getElementById("testimonial-name");
-
-const nextButton =
-  document.querySelector(".testimonial-btn.next");
-
-const prevButton =
-  document.querySelector(".testimonial-btn.prev");
-
-const dotsContainer =
-  document.querySelector(".testimonial-dots");
+let currentReview = 0;
 
 
-/* CREATE DOTS */
+const reviewText =
+  document.getElementById("reviewText");
 
-testimonials.forEach((_, index) => {
+const reviewName =
+  document.getElementById("reviewName");
 
-  const dot = document.createElement("span");
+const previousReview =
+  document.getElementById("previousReview");
 
-  dot.classList.add("dot");
-
-  dot.addEventListener("click", () => {
-
-    currentTestimonial = index;
-
-    updateTestimonial();
-
-  });
-
-  dotsContainer.appendChild(dot);
-
-});
+const nextReview =
+  document.getElementById("nextReview");
 
 
-function updateDots() {
+function showReview(index) {
 
-  const dots =
-    document.querySelectorAll(".dot");
+  reviewText.style.opacity = "0";
+  reviewName.style.opacity = "0";
 
-  dots.forEach((dot, index) => {
 
-    dot.style.opacity =
-      index === currentTestimonial ? "1" : "0.3";
+  setTimeout(function () {
 
-  });
+    reviewText.textContent =
+      reviews[index].text;
+
+    reviewName.textContent =
+      reviews[index].name;
+
+
+    reviewText.style.opacity = "1";
+    reviewName.style.opacity = "1";
+
+  }, 200);
 
 }
 
 
-function updateTestimonial() {
+nextReview.addEventListener("click", function () {
 
-  testimonialText.style.opacity = "0";
-  testimonialName.style.opacity = "0";
+  currentReview++;
 
-  setTimeout(() => {
+  if (currentReview >= reviews.length) {
 
-    testimonialText.textContent =
-      testimonials[currentTestimonial].text;
+    currentReview = 0;
 
-    testimonialName.textContent =
-      testimonials[currentTestimonial].name;
-
-    testimonialText.style.opacity = "1";
-    testimonialName.style.opacity = "1";
-
-    updateDots();
-
-  }, 250);
-
-}
-
-
-nextButton.addEventListener("click", () => {
-
-  currentTestimonial++;
-
-  if (currentTestimonial >= testimonials.length) {
-    currentTestimonial = 0;
   }
 
-  updateTestimonial();
+  showReview(currentReview);
 
 });
 
 
-prevButton.addEventListener("click", () => {
+previousReview.addEventListener("click", function () {
 
-  currentTestimonial--;
+  currentReview--;
 
-  if (currentTestimonial < 0) {
-    currentTestimonial = testimonials.length - 1;
+  if (currentReview < 0) {
+
+    currentReview = reviews.length - 1;
+
   }
 
-  updateTestimonial();
+  showReview(currentReview);
 
 });
 
 
-updateTestimonial();
+/* =========================================
+   AUTO REVIEW SLIDER
+========================================= */
+
+setInterval(function () {
+
+  currentReview++;
+
+  if (currentReview >= reviews.length) {
+
+    currentReview = 0;
+
+  }
+
+  showReview(currentReview);
+
+}, 7000);
 
 
-/* -----------------------------------------
-   BUTTON MICRO INTERACTION
------------------------------------------ */
+/* =========================================
+   HERO PARALLAX
+========================================= */
 
-const buttons =
-  document.querySelectorAll(".btn, .nav-book");
-
-buttons.forEach(button => {
-
-  button.addEventListener("mouseenter", () => {
-
-    button.style.transform = "translateY(-3px)";
-
-  });
-
-  button.addEventListener("mouseleave", () => {
-
-    button.style.transform = "";
-
-  });
-
-});
+const heroBackground =
+  document.querySelector(".hero-background");
 
 
-/* -----------------------------------------
-   IMAGE PARALLAX
------------------------------------------ */
+window.addEventListener("scroll", function () {
 
-const heroImage =
-  document.querySelector(".hero-image");
+  if (!heroBackground) return;
 
-window.addEventListener("scroll", () => {
+  if (window.scrollY < window.innerHeight) {
 
-  if (!heroImage) return;
-
-  const scrollPosition =
-    window.scrollY;
-
-  if (scrollPosition < window.innerHeight) {
-
-    heroImage.style.transform =
-      `translateY(${scrollPosition * 0.12}px) scale(1.02)`;
+    heroBackground.style.transform =
+      `translateY(${window.scrollY * 0.08}px) scale(1.02)`;
 
   }
 
 });
 
 
-/* -----------------------------------------
-   SMOOTH ANCHOR NAVIGATION
------------------------------------------ */
+/* =========================================
+   SMOOTH LINKS
+========================================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+const internalLinks =
+  document.querySelectorAll('a[href^="#"]');
 
-  anchor.addEventListener("click", function (event) {
 
-    const targetId =
-      this.getAttribute("href");
+internalLinks.forEach(function (link) {
 
-    if (
-      !targetId ||
-      targetId === "#" ||
-      !document.querySelector(targetId)
-    ) {
-      return;
-    }
+  link.addEventListener("click", function (event) {
+
+    const target =
+      document.querySelector(
+        link.getAttribute("href")
+      );
+
+
+    if (!target) return;
+
 
     event.preventDefault();
 
-    document.querySelector(targetId).scrollIntoView({
+
+    target.scrollIntoView({
+
       behavior: "smooth",
+
       block: "start"
+
     });
 
   });
@@ -315,40 +292,50 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-/* -----------------------------------------
-   PORTFOLIO IMAGE HOVER
------------------------------------------ */
+/* =========================================
+   PORTFOLIO TILT
+========================================= */
 
 const galleryItems =
   document.querySelectorAll(".gallery-item");
 
-galleryItems.forEach(item => {
 
-  item.addEventListener("mousemove", (event) => {
+galleryItems.forEach(function (item) {
+
+  item.addEventListener("mousemove", function (event) {
+
+    if (window.innerWidth < 700) return;
+
 
     const rect =
       item.getBoundingClientRect();
 
+
     const x =
       event.clientX - rect.left;
+
 
     const y =
       event.clientY - rect.top;
 
+
     const rotateX =
       ((y / rect.height) - 0.5) * -2;
+
 
     const rotateY =
       ((x / rect.width) - 0.5) * 2;
 
+
     item.style.transform =
-      `perspective(800px)
+      `perspective(900px)
        rotateX(${rotateX}deg)
        rotateY(${rotateY}deg)`;
 
   });
 
-  item.addEventListener("mouseleave", () => {
+
+  item.addEventListener("mouseleave", function () {
 
     item.style.transform = "";
 
@@ -357,19 +344,23 @@ galleryItems.forEach(item => {
 });
 
 
-/* -----------------------------------------
-   REDUCE MOTION FOR ACCESSIBILITY
------------------------------------------ */
+/* =========================================
+   ACCESSIBILITY
+========================================= */
 
-const prefersReducedMotion =
-  window.matchMedia("(prefers-reduced-motion: reduce)");
+const reducedMotion =
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
 
-if (prefersReducedMotion.matches) {
+
+if (reducedMotion.matches) {
 
   document.documentElement.style.scrollBehavior =
     "auto";
 
-  revealElements.forEach(element => {
+
+  revealElements.forEach(function (element) {
 
     element.classList.add("visible");
 
