@@ -614,3 +614,295 @@ body {
     background: #1a1412;
     border-radius: 16px;
     overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #d4af37;
+    position: relative;
+    cursor: pointer;
+}
+.instagram-grid .ig-item:hover {
+    transform: scale(1.02) rotate(1deg);
+    border-color: #d4af37;
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1);
+}
+.instagram-grid .ig-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.instagram-grid .ig-item .ig-icon {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 12, 11, 0.5);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 2.4rem;
+    color: #fff;
+}
+.instagram-grid .ig-item:hover .ig-icon {
+    opacity: 1;
+}
+
+.ig-follow-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 44px;
+    background: linear-gradient(135deg, #d4af37, #e8b4a2);
+    color: #0f0c0b;
+    border-radius: 60px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+    margin: 10px 0 30px;
+}
+.ig-follow-btn:hover {
+    transform: scale(1.04);
+    box-shadow: 0 12px 44px rgba(212, 175, 55, 0.35);
+}
+.ig-follow-btn i {
+    font-size: 1.4rem;
+}
+
+/* ===== CONTACT ===== */
+.contact-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 40px 0 60px;
+}
+.contact-wrap .form-group {
+    margin-bottom: 22px;
+}
+.contact-wrap label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #b7a48b;
+    margin-bottom: 6px;
+}
+.contact-wrap input,
+.contact-wrap select,
+.contact-wrap textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: #1a1412;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 12px;
+    color: #f5ede4;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: border 0.3s ease;
+    outline: none;
+}
+.contact-wrap input:focus,
+.contact-wrap select:focus,
+.contact-wrap textarea:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+.contact-wrap textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-info {
+    background: #1a1412;
+    padding: 40px 34px;
+    border-radius: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.08);
+}
+.contact-info h3 {
+    font-family: 'Marcellus', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #d4af37;
+}
+.contact-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    color: #c9b8a4;
+}
+.contact-info .info-item i {
+    width: 36px;
+    height: 36px;
+    background: rgba(212, 175, 55, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4af37;
+    font-size: 1rem;
+}
+.contact-info .info-item a {
+    color: #f5ede4;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.contact-info .info-item a:hover {
+    color: #d4af37;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    border-top: 1px solid rgba(212, 175, 55, 0.08);
+    padding: 40px 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.footer .brand-small {
+    font-family: 'Marcellus', serif;
+    font-size: 1.4rem;
+    color: #d4af37;
+    letter-spacing: 1px;
+}
+.footer .links a {
+    color: #b7a48b;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+.footer .links a:hover {
+    color: #d4af37;
+}
+.footer .social-icons a {
+    color: #b7a48b;
+    font-size: 1.3rem;
+    margin-left: 16px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+.footer .social-icons a:hover {
+    color: #d4af37;
+    transform: scale(1.1);
+}
+.footer .copy {
+    font-size: 0.75rem;
+    color: #5a4f46;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+}
+
+/* ===== BACK TO TOP ===== */
+.back-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #d4af37;
+    color: #0f0c0b;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    z-index: 999;
+}
+.back-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+.back-top:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .hero-stats {
+        width: 100%;
+        justify-content: space-around;
+        padding: 12px 16px;
+    }
+    .hero-banner h2 {
+        font-size: 2.6rem;
+    }
+    .contact-wrap {
+        grid-template-columns: 1fr;
+    }
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .brand h1 {
+        font-size: 2.4rem;
+    }
+    .stats-bar .stat-number {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        padding: 0 18px;
+    }
+    .hero-banner h2 {
+        font-size: 2rem;
+    }
+    .hero-banner .sub {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .hero-stats .stat-number {
+        font-size: 1.2rem;
+    }
+    .hero-stats .stat-label {
+        font-size: 0.6rem;
+    }
+    .testimonial-card {
+        min-width: 240px;
+        flex: 0 0 260px;
+    }
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer .social-icons a {
+        margin: 0 8px;
+    }
+    .btn-gold,
+    .btn-outline-gold {
+        padding: 12px 28px;
+        font-size: 0.8rem;
+    }
+}
